@@ -1,3 +1,6 @@
+let data;
+
+
 async function getData() {
     const url = "./travel_recommendation_api.json";
     try {
@@ -5,10 +8,11 @@ async function getData() {
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
         }
-
         const result = await response.json();
         console.log(result);
     } catch (error) {
         console.error(error.message);
     }
 }
+
+getData()
