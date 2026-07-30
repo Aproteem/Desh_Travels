@@ -47,6 +47,10 @@
     background-color: rgb(0, 0, 0, 50%);
 }
 
+#search_res {
+    display: flex;
+}
+
 input {
     border: none;
     background-color: transparent;
