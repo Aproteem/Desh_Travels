@@ -1,5 +1,5 @@
 const search_btn = document.getElementById("search_btn");
-
+const clr_btn = document.getElementById("clr_btn");
 
 async function getData(str) {
     const url = "./travel_recommendation_api.json";
@@ -27,9 +27,6 @@ function showdata(array) {
         const html = `<img src="${imgurl}"><br><h1>${name}</h1><br><p>${desc}</p>`;
         newChild.innerHTML = html;
         resultdiv.appendChild(newChild);
-
-
-
     })
 }
 
@@ -44,5 +41,13 @@ function search() {
         getData("countries");
     }
 }
+function clear() {
+    const resultdiv = document.getElementById("search_res");
+    const searchterm = document.getElementById("searchstr");
+    resultdiv.innerHTML = "";
+    searchterm.value = "";
 
+
+}
 search_btn.addEventListener("click", search);
+clr_btn.addEventListener("click", clear)
